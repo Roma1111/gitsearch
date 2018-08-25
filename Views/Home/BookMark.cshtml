@@ -1,0 +1,37 @@
+﻿@model GitSearch.Models.RepositoryViewModel
+@{
+    ViewBag.Title = "BookMark";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class=" = container" dir="ltr">
+    <h2>The Repository with id @Model.id has been bookmarked</h2>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="col-md-8 offset-md-4">
+        <div class="thumbnail">
+            <div class="thumupper">
+                <div class="blurry_bg" style="background-image: url(@Model.avatar)"></div>
+                <img src=@Model.avatar alt=" ...">
+            </div>
+            <div class="thumbottom">
+
+
+                <div class="caption">
+                    <h4 style="text-align:center">@Model.name</h4>
+                </div>
+
+
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        @*link for the bookmarked repositories*@
+       <h2>@Html.ActionLink("Press here to see bookmarked repositories", "viewBookmarked")</h2>
+
+    </div>
+
+</div>

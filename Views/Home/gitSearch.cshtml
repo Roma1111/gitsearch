@@ -1,0 +1,45 @@
+﻿@model GitSearch.Models.results
+
+@{
+    ViewBag.Title = "תוצאות החיפוש";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+
+
+    <h4>תוצאות החיפוש</h4>
+
+
+    @using (Html.BeginForm())
+    {
+    <div class="row">
+        @for (int i = 0; i < Model.items.Count(); i++)
+        {
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="hebRowDir">
+                <div class="thumbnail">
+                    <div class="thumupper">
+                        <div class="blurry_bg" style="background-image: url(@Model.items[i].owner.avatar_url)"></div>
+                        <img src=@Model.items[i].owner.avatar_url alt=" ...">
+                    </div>
+                    <div class="thumbottom">
+                        <div class="caption">
+                            <h4 style="text-align:center">@Model.items[i].name</h4>
+                        </div>
+                        <div>
+                            <input type="submit" value="Bookmark" class="btn btn-default"  formaction="@Url.Action("BookMark", "Home", new { id = Model.items[i].id, avatar = Model.items[i].owner.avatar_url, name = Model.items[i].name  })" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    }
+    </div>
+    
+
+
+
+

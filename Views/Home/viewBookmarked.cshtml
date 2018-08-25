@@ -1,0 +1,34 @@
+﻿@model List<GitSearch.Models.RepositoryViewModel>
+@{
+    ViewBag.Title = "viewBookmarked";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container" dir="ltr">
+
+    <h2>The bookmarks repository names</h2>
+
+    <div class="row">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="hebRowDir">
+                <div class="thumbnail">
+                    <div class="thumupper">
+                        @*background for the image in the thumbnail*@
+                        <div class="blurry_bg" style="background-image: url(@Model[i].avatar)"></div>
+                        <img src=@Model[i].avatar alt=" ...">
+                    </div>
+                    <div class="thumbottom">
+                        <div class="caption">
+                            <h4 style="text-align:center">@Model[i].name</h4>
+                        </div>                        
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
